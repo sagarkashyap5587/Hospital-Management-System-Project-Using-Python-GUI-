@@ -16,7 +16,7 @@ def pd():
         messagebox.showerror('Error','All fields are require')
         
     else:
-        con=mysql.connector.connect(host='localhost',username='root',password='sagarkuma@123',database='hospital')
+        con=mysql.connector.connect(host='localhost',username='root',password='root',database='hospital')
         mycursor=con.cursor()
         mycursor.execute('insert into daily values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(
          nameoftablets.get(),
@@ -37,7 +37,7 @@ def pd():
         messagebox.showinfo('Success','Record has been inserted')
         
 def fetchdata():
-    con=mysql.connector.connect(host='localhost',username='root',password='sagarkuma@123',database='hospital')
+    con=mysql.connector.connect(host='localhost',username='root',password='root',database='hospital')
     mycursor=con.cursor()
     mycursor.execute('select * from daily')
     rows=mycursor.fetchall()
